@@ -73,7 +73,9 @@ int main() {
 		sort(graph[i].begin(), graph[i].end());
 	}
 
-	//dfs
+	dfs(start, graph, check);
+	fill(check, check + n + 1, false);
+	printf("\n");
 	bfs(start, graph, check);
 	printf("\n");
 
