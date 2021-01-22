@@ -10,8 +10,6 @@ int main(){
     cin >> r >> s;
 
     vector< vector<char> > a;
-    vector< pair<int, int> > meteor;
-    vector< pair<int, int> > land;
 
     vector< vector<int> > meteor_y(s);
     vector< vector<int> > ground_y(s);
@@ -28,9 +26,6 @@ int main(){
 
             if(c == 'X') meteor_y[j].push_back(i);
             else if(c == '#') ground_y[j].push_back(i);
-
-            // if(c == 'X') meteor.push_back(make_pair(i, j));
-            // else if(c == '#') land.push_back(make_pair(i, j));
         }
 
         a.push_back(tmp);
@@ -39,7 +34,6 @@ int main(){
     for(int i = 0; i < meteor_y.size(); i++){
         if(!meteor_y[i].empty()) sort(meteor_y[i].begin(), meteor_y[i].end(), greater<int>());
         if(!ground_y[i].empty()) sort(ground_y[i].begin(), ground_y[i].end());
-
         if(!meteor_y[i].empty() && !ground_y[i].empty()) time_min = min(ground_y[i][0] - meteor_y[i][0], time_min);
     }
     time_min--;
@@ -50,23 +44,6 @@ int main(){
             a[meteor_y[i][j] + time_min][i] = 'X';
         }
     }
-
-
-    // for(int i = 0; i < meteor.size(); i++){
-    //     for(int j = 0; j < land.size(); j++){
-    //         if(meteor[i].second == land[j].second){
-    //             time_min = min(land[j].first - meteor[i].first, time_min);
-    //         }
-    //     }
-    // }
-
-
-    // time_min--;
-
-    // for(int i = 0; i < meteor.size(); i++){
-    //     a[meteor[i].first][meteor[i].second] = '.';
-    //     a[meteor[i].first + time_min][meteor[i].second] = 'X';
-    // }
 
     for(int i = 0; i < r; i++){
         for(int j = 0; j < s; j++){
