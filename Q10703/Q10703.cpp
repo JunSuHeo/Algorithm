@@ -10,7 +10,6 @@ int main(){
     cin >> r >> s;
 
     vector< vector<char> > a;
-
     vector< vector<int> > meteor_y(s);
     vector< vector<int> > ground_y(s);
 
