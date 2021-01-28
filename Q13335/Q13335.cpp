@@ -41,8 +41,6 @@ int main(){
             truck_sum += arr[last_idx].first;
             arr[last_idx].second--;
         }
-
-        
     }
 
     printf("%d\n", time);
