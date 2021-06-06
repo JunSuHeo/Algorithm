@@ -18,7 +18,10 @@ public class Main {
 		
 		while(dq.size() != 1) {
 			dq.poll();
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 684f660ac3651eede33637fb51222ced53336a5a
 			dq.offer(dq.poll());
 		}
 		
