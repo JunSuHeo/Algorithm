@@ -14,21 +14,47 @@ public class Main {
 		for(int i = 0; i < n; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			int printCnt = Integer.parseInt(st.nextToken());
-			int target = Integer.parseInt(st.nextToken());
+			int targetIdx = Integer.parseInt(st.nextToken());
 			
 			Deque<Integer> dq = new ArrayDeque<Integer>();
-			int maxTarget = 0;
 			
 			st = new StringTokenizer(br.readLine(), " ");
+			int maxNum = 0;
+
+			// input queue
 			for(int j = 0; j < printCnt; j++) {
 				int tmp = Integer.parseInt(st.nextToken());
+				dq.offer(tmp);
 				
-				if(tmp > maxTarget) {
-					maxTarget = tmp;
-				} else {
-					
+				if(tmp > maxNum) {
+					maxNum = tmp;
 				}
 			}
+			
+			int idx = 0;
+			int count = 0;
+			
+			while(targetIdx != -1) {
+				int tmp = dq.poll();
+				
+				if(tmp == maxNum) {
+					if(dq.contains(tmp)) {
+						
+					} else {
+						for(int j = tmp - 1; j > 0; j--) {
+							if(dq.contains(j)) {
+								maxNum = j;
+								break;
+							}
+						}
+					}
+					
+					
+				}
+				
+			}
+			
 		}
 	}
 }
+
