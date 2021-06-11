@@ -13,10 +13,10 @@ public class Main {
 		
 		int N = Integer.parseInt(br.readLine());
 		
-		List<Integer> arr = new ArrayList<Integer>();
+		List<Short> arr = new ArrayList<Short>();
 		
 		for(int i = 0; i < N; i++) {
-			arr.add(Integer.parseInt(br.readLine()));
+			arr.add(Short.parseShort(br.readLine()));
 		}
 		Collections.sort(arr);
 		StringBuilder sb = new StringBuilder();
