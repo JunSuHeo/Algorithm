@@ -1,8 +1,5 @@
 package Q4949;
-<<<<<<< HEAD
-=======
 
->>>>>>> 684f660ac3651eede33637fb51222ced53336a5a
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -15,11 +12,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		ArrayList<String> arr = new ArrayList<String>();
 		
-<<<<<<< HEAD
 		while(true) {			// 입력받기
-=======
-		while(true) {			// �Է¹ޱ�
->>>>>>> 684f660ac3651eede33637fb51222ced53336a5a
 			String tmp = br.readLine();
 			
 			if(tmp.equals(".")) {
@@ -103,3 +96,4 @@ public class Main {
 	}
 
 }
+
