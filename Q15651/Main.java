@@ -1,28 +1,28 @@
-package Q15650;
+package Q15651;
 
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.io.BufferedReader;
 
 public class Main {
-	private static int[] arr;
-	private static StringBuilder sb = new StringBuilder();
 	private static int N;
 	private static int M;
+	private static int[] arr = null;
+	private static StringBuilder sb = new StringBuilder();
 	
-	public static void dfs(int depth, int idx) {
+	private static void dfs(int depth) {
 		if(depth == M) {
-			
-			for(int tmp : arr) {
-				sb.append(tmp).append(' '); 
+			for(int a : arr) {
+				sb.append(a).append(' ');
 			}
 			sb.append('\n');
+			
 			return ;
 		}
 		
-		for(int i = idx; i <= N; i++) {
-			arr[depth] = i;
-			dfs(depth + 1, i + 1);
+		for(int i = 0; i < N; i++) {
+			arr[depth] = i + 1;
+			dfs(depth + 1);
 		}
 	}
 
@@ -35,7 +35,7 @@ public class Main {
 		
 		arr = new int[M];
 		
-		dfs(0, 1);
+		dfs(0);
 		
 		System.out.println(sb);
 	}
